@@ -18,6 +18,7 @@ app.Run();
 
 static async Task<IResult> GetAllTodos(TodoDb db)
 {
+    // Tüm TODO'ları götür
     return TypedResults.Ok(await db.Todos.Select(x => new TodoItemDTO(x)).ToArrayAsync());
 }
 
